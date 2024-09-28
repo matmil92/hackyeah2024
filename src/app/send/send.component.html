@@ -6,7 +6,7 @@
     ></app-card-content>
   </mat-card-content>
   <div class="card-button">
-    <div class="progress">{{ request.progress }}/{{ request.limit }}</div>
+    <div class="progress unselectable">{{ progress }}/{{ request.limit }}</div>
     <circle-progress
       [percent]="request.progress"
       [radius]="100"

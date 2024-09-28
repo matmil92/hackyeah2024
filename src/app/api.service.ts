@@ -31,26 +31,35 @@ export class ApiService {
       .then(() => {
         console.log('Połączono z hubem SignalR');
 
-        const username = prompt('Podaj swoją nazwę użytkownika:');
-        this.conn.invoke('RegisterUser', username).catch((err: any) => {
+        this.conn.invoke('RegisterUser', 'Adrian').catch((err: any) => {
+          console.log(1234);
           return console.error(err.toString());
         });
 
-        this.conn.invoke('SendMessageToUser', '', '').catch((err: any) => {
-          return console.error(err.toString());
-        });
+        this.conn
+          .invoke('SendMessageToUser', 'Adrian', 'elo')
+          .catch((err: any) => {
+            console.log(5678);
+
+            return console.error(err.toString());
+          });
       })
       .catch((err: any) => {
+        console.log(9999);
+
         return console.error(err.toString());
       });
 
     // Odbieranie wiadomości od serwera
     this.conn.on('ReceiveMessage', (user: any, message: any) => {
+      console.log(1111);
       console.log(user, message);
     });
 
     // Odbieranie błędów
     this.conn.on('ErrorMessage', (message: any) => {
+      console.log(2222);
+
       alert(message);
     });
   }
