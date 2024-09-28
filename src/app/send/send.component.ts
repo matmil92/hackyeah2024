@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { CardContentComponent } from '../card-content/card-content.component';
@@ -22,8 +22,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './send.component.html',
   styleUrl: './send.component.scss',
 })
-export class SendComponent implements OnInit {
+export class SendComponent implements OnInit, AfterViewInit {
   public request: any;
+  public shouldAnimate: boolean = false;
   constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {
     this.route.params.subscribe((data) => console.log(data));
   }
@@ -31,11 +32,14 @@ export class SendComponent implements OnInit {
   public ngOnInit(): void {
     this.route.paramMap
       .pipe(map(() => window.history.state))
-      .subscribe((res) => (this.request = res.request));
+      .subscribe((res) => {this.request = res.request;});
+  }
+
+  public ngAfterViewInit(): void {
+      this.shouldAnimate = false;
   }
 
   public addEnergy(): void {
     this.request.progress = this.request.progress + 1;
-    this.cdr.detectChanges();
   }
 }
