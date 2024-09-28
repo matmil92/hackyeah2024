@@ -1,0 +1,7 @@
+@for (request of requests; track request.id) {
+<mat-card class="card" appearance="outlined" (click)="redirect(request)">
+  <mat-card-content>
+    <app-card-content [request]="request"></app-card-content>
+  </mat-card-content>
+</mat-card>
+}

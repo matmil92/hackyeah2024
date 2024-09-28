@@ -1,0 +1,26 @@
+<mat-card class="card" appearance="outlined" style="height: 30%">
+  <mat-card-content>
+    <app-card-content
+      [request]="request"
+      [showProgress]="false"
+    ></app-card-content>
+  </mat-card-content>
+  <div class="card-button">
+    <div class="progress">{{ request.progress }}/{{ request.limit }}</div>
+    <circle-progress
+      [percent]="request.progress"
+      [radius]="100"
+      [outerStrokeWidth]="18"
+      [innerStrokeWidth]="12"
+      [outerStrokeColor]="'coral'"
+      [innerStrokeColor]="'lightcoral'"
+      [animation]="true"
+      [animationDuration]="300"
+      [title]="'Send energy'"
+      [showSubtitle]="false"
+      [showUnits]="false"
+      [renderOnClick]="false"
+      (click)="addEnergy()"
+    ></circle-progress>
+  </div>
+</mat-card>

@@ -1,0 +1,27 @@
+:host {
+  min-height: 2rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-header {
+  margin: 1rem 0;
+  color: white;
+
+  &--title {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &--subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  &--right-title {
+    font-size: 1.2rem;
+  }
+}

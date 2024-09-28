@@ -1,0 +1,33 @@
+<div class="card-content">
+  <div class="card-content-container">
+    <div class="card-content__header">
+      <div class="card-content__title">
+        @if (request.progress > 50) {
+        <img class="image" src="./happy_face.png" />
+        } @else {
+        <img class="image" src="./sad_face.png" />
+        }
+
+        <div class="card-content__title">
+          {{ request.title }}
+        </div>
+      </div>
+    </div>
+    <div>{{ request.description }}</div>
+  </div>
+  @if (showProgress) {
+  <div>
+    <circle-progress
+      [percent]="request.progress"
+      [radius]="60"
+      [outerStrokeWidth]="16"
+      [innerStrokeWidth]="9"
+      [outerStrokeColor]="'coral'"
+      [innerStrokeColor]="'lightcoral'"
+      [animation]="true"
+      [animationDuration]="300"
+      [showSubtitle]="false"
+    ></circle-progress>
+  </div>
+  }
+</div>

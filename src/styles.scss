@@ -8,4 +8,31 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #282444;
 }
+
+.card {
+  display: flex;
+  margin: 1rem 2rem;
+  &:first-child {
+    margin-top: 2rem;
+  }
+}
+
+tspan {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in Internet Explorer 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    color: coral;
+  }
+}
+

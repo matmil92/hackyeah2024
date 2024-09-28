@@ -3,15 +3,19 @@
     mat-icon-button
     class="example-icon"
     aria-label="Example icon-button with menu icon"
+    routerLink="/send"
+    routerLinkActive="active"
   >
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <span>Good Vibes</span>
   <span class="example-spacer"></span>
   <button
     mat-icon-button
     class="example-icon favorite-icon"
     aria-label="Example icon-button with heart icon"
+    routerLink="/requests"
+    routerLinkActive="active"
   >
     <mat-icon>favorite</mat-icon>
   </button>
@@ -23,3 +27,18 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
+
+<router-outlet></router-outlet>
+<!--
+<app-header></app-header>
+
+<mat-card class="card" appearance="outlined">
+  <mat-card-content>
+    <app-card-content></app-card-content>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card card--full" appearance="outlined">
+  <mat-card-content>Simple card</mat-card-content>
+</mat-card>
+-->
