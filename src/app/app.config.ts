@@ -31,6 +31,9 @@ export const appConfig: ApplicationConfig = {
         innerStrokeColor: "#C7E596",
         animationDuration: 300
       })
-    )
+    ), provideServiceWorker('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            registrationStrategy: 'registerWhenStable:30000'
+          })
   ],
 };
